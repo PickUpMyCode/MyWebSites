@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Liga/Desliga</title>
+	<meta charset="UTF-8" />
+	<style type="text/css">
+		table{
+			margin: 0px auto;
+			border: solid black;
+			background-color: white;
+			border-radius: 10px;
+			width:200px;
+			height: 200px;
+			
+		}
+		.divtest{
+			background-color: white;
+			width: 14%;
+			height: 50px;
+			overflow: visible;
+			margin: 0px auto;
+		}
+
+	</style>
+	</head>
+
+	<body>
+	<script type="text/javascript">
+	var cont = 0;
+	function alternar(){
+		cont = cont + 1;
+		if(cont == 1){
+			document.getElementById('imagem').src = 'Lon.jpg';
+			document.getElementById('status').innerHTML = "A LÂMPADA ESTA LIGADA!";
+			document.getElementById('alterna').innerHTML = "Desligar";
+		} else {
+			cont = 0;
+			document.getElementById('imagem').src = 'Loff.jpg';
+			document.getElementById('status').innerHTML = "A LÂMPADA ESTA DESLIGADA!";
+			document.getElementById('alterna').innerHTML = "ligar";
+		}
+	}
+	</script>
+		<table border="0">
+			<th>
+				<h3 id="status">A LÂMPADA ESTA DESLIGADA!</h3>
+				<img src="Loff.jpg" id="imagem"/><br><br>
+				<button onclick="return alternar()" ><p id="alterna">Ligar</p></button>
+			</th>
+		</table>
+	</body>
+</html>
