@@ -1,0 +1,56 @@
+		body{
+			margin: 0px auto;
+			display: inherit;
+			text-align: center;
+			/*background-color: #cfcfcf*/
+			background-image: url("fundo-cinza.jpg");
+			background-repeat: no-repeat;
+		}
+		a {
+			text-decoration: none;
+			color: white;
+			text-shadow: none;
+		}
+		.button{
+			margin: 0px auto;
+			text-align: center;	
+		}
+		.nomes{
+			text-align: left;
+		}
+		.alunos{
+			text-align: left;
+			
+		}		
+		.titulo0{
+			margin-left: 50px;
+			font-size: 25px;
+		}
+		.titulo1{
+			margin-left: 20px;
+			font-size: 25px;
+		}
+		.titulo2{
+			text-align: center;
+		}
+		.titulo3{
+			width: 700px;
+			height: 100px;
+			border-style: none none double none;
+			border-radius: 10px;
+			background-color: white;
+			margin-left: 0%;
+			margin-right: 0%;
+			margin-top: 0%;
+		}
+		.cabecalho{
+			font-size: 20px;
+			font-style: italic;
+		}
+		.assunto{
+			font-size: 22px;
+			text-align: left;
+		}
+		.nomes{
+			font-size: 15px;
+		}

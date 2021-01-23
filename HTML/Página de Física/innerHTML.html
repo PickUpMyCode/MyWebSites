@@ -1,0 +1,45 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{
+			background-color: #ffff00;
+		}
+		table{
+			color:#ff0000;
+			margin-left: 280px;
+			width: 60%;
+			height: 500px
+		}
+		p{
+			color:#000000;
+			text-shadow: 1px 2px orange;
+			font-size: 25px;
+			text-align: center;
+			margin-bottom: 400px;
+		}
+		button{
+			color:#000033;
+			margin-top: 0px;
+		}
+	</style>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			function trocartexto(){
+				document.getElementById('p1').innerHTML = "Texto Alterado";
+			}
+			
+		</script>
+		<table border="10">
+			<tr>
+				<td>
+				<p id="p1">Texto</p>
+				<button onclick="return trocartexto()">Ver texto</button>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

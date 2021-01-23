@@ -1,0 +1,146 @@
+<html>
+	<head>
+	<title>Movendo</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script type="text/javascript">
+		var collided = false;
+		var start = false;
+		var flag = true;
+		var cont = 0;
+		var a, b, c;
+		//Desenha o mapa
+		function draw(){
+			var Pagina = document.querySelector(".Pagina");
+			var gameBack = document.querySelector(".gameBack");
+			var height = window.innerHeight - 30;
+			var positionX = window.innerWidth / 2.7;
+			var positionY = window.innerHeight / 4.5;
+			Pagina.style.height = height + "px";
+			gameBack.style.left = positionX + "px";
+			gameBack.style.top = positionY + "px";
+		}
+		//Movimentacao do Jogador
+		function PlayerMovement(){
+		if(start){
+			if(!collided){
+					//var A = 97, S = 115, D = 100, W = 119;
+					var A = 97, D = 100;
+					var gameBack = document.querySelector(".gameBack");
+					var player = document.getElementById('PlayerId');
+					player.style.position = 'absolute';
+					var p = parseInt(player.style.left);
+					if(event.keyCode == A){	
+						if(parseInt(player.style.left) > 0 ){		
+							p -=10;
+							player.style.left = p + 'px';
+						}
+					}
+					if(event.keyCode == D){
+						if(parseInt(player.style.left) < 446 ){
+							p += 10;
+							player.style.left = p + 'px';
+						}
+					}	
+				}
+			}
+		}		
+		//Movimentacao do artefato lancado em cima do player
+		function ThrowArtefacts(init) {
+			if(!collided){
+				start = init;
+				var startButton = document.querySelector(".StartButton");
+				var player = document.getElementById('PlayerId');
+				var pontuacao = document.getElementById('Pontuacao');
+				var r = Math.floor((Math.random() * 449) + 1);
+				artefact.style.position = 'relative';
+				startButton.style.visibility = 'hidden';
+				if(flag){
+					artefact.style.left = r + 'px';
+					flag = false;
+				}
+				if(parseInt(artefact.style.top) <= 448){
+					artefact.style.top = (parseInt(artefact.style.top.replace("px", "")) + 10) + 'px';
+					var posYA = parseInt(artefact.style.top) / 10;
+					var posXA = parseInt(artefact.style.left);
+					if(posYA >= parseInt(player.style.top) && posXA < parseInt(player.style.left) + 50 && posXA > parseInt(player.style.left) -50){
+						collided = true;
+						start = false;
+						alert("Voce perdeu!");
+						artefact.style.top = '0px';
+						startButton.innerHTML = "Reniciar";
+						startButton.style.visibility = "visible";
+						cont = 0;
+						collided = false;
+						pontuacao.innerHTML = "0";
+						flag = true;
+					}else{
+						setTimeout("ThrowArtefacts(true)", "10");
+					}
+				} else {
+					cont++;
+					artefact.style.top = '0px';
+					artefact.style.left = r + 'px';
+					pontuacao.innerHTML = cont;
+					setTimeout("ThrowArtefacts(true)", "1");
+				}
+			}
+		}
+	</script>
+	<style type="text/css">
+	body {
+		background-color: orange;
+		border-style: solid;
+	}
+	.artefatos {
+		background-color:blue;
+		height: 50px;
+		width: 50px;
+	}
+	.Player{
+		background-color:#ffffff;
+		height: 50px;
+		width: 50px;
+		margin-top: 400px;
+	}
+	.gameBack {
+		background-color: black;
+		height: 500px;
+		width: 500px;
+		position: absolute;
+	}
+	.StartButton {
+		height: 50px;
+		width: 80px;
+		text-align: center;
+	}
+	h2 {
+		text-shadow: 2px 2px white;
+	}
+	</style>
+	</head>
+	<!--<tr> cria uma linha para a tabela
+		<td> define um titulo para a tabela
+		<th> defina um dado na tabela
+	-->
+	<body class="Pagina" onload="return draw();" onkeypress="return PlayerMovement();">
+		<h2 style="text-align: center;margin-top: 100px;">Desvie dos Objetos</h2>	
+		<div class="gameBack">
+			<div id="artefact" class="artefatos" style="left: 0px;top: 0px; "></div>
+			<center>	
+				<div id="PlayerId" class="Player" style="left:230px; top: 39px;"></div>
+			</center>
+		</div>		
+		<center>
+			<button class="StartButton" onclick="return ThrowArtefacts(true);" style="margin-top: 600px;">Iniciar</button>
+		</center>
+		<table border="1" style="margin-left: 600px; margin-top: -300px;">
+			<tr>
+				<td>Pontuação</td>
+			</tr>
+			<tr>
+				<th><p id="Pontuacao">0</p></th>
+			</tr>
+		</table>	
+	</body>
+</html>

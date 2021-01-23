@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calc</title>
+	<meta charset="utf-8"/>
+	<meta name="portview" content="width=device-width, initial-scale=1.0" />
+	<style type="text/css">
+		body{
+			background-color: #530F91
+		}
+		.div_mid{
+			height: 400px;
+			width: 400px;
+			background-color: orange;
+			border-style: double;
+			margin-left: 35%;
+			border-radius: 10px;
+			margin-top: 100px;
+		}
+		h1{
+			text-align: center;
+			font-style: italic;
+			text-shadow: red 1px 1px;
+		}
+		input{
+			margin-left: 30%;
+		}
+		p{
+			margin-left: 30%;
+			font-style: italic;
+			text-shadow: red 1px 1px;
+		}
+		table{
+			margin-left: 60px;
+
+		}
+		
+	</style>
+		<script language="javascript">
+			
+		function subtrai(){
+			var s1 = parseInt(document.getElementById('input1').value, 10); //parseX() serve para fazer a conversão de um texto para um numero inteiro racional/irracional/inteiro[]
+			var s2 = parseInt(document.getElementById('input2').value, 10);
+			var soma = s1 - s2;
+			document.getElementById('exibi').innerHTML = "Resultado: "+soma;
+		}
+		function soma(){
+			var s1 = parseInt(document.getElementById('input1').value, 10);
+			var s2 = parseInt(document.getElementById('input2').value, 10);
+			var soma = s1 + s2;
+			document.getElementById('exibi').innerHTML = "Resultado: "+soma;
+		}
+		function multiplica(){
+			var s1 = parseFloat(document.getElementById('input1').value, 10);
+			var s2 = parseFloat(document.getElementById('input2').value, 10);
+			var soma = s1 * s2;
+			document.getElementById('exibi').innerHTML = "Resultado: "+soma;
+		}
+		function dividi(){
+			var s1 = parseFloat(document.getElementById('input1').value, 10);
+			var s2 = parseFloat(document.getElementById('input2').value, 10);
+			var soma = s1/s2;
+			document.getElementById('exibi').innerHTML = "Resultado: "+soma;	
+		}
+	</script>
+</head>
+<body>
+	<div class="div_mid">
+		<h1>Calculadora</h1>
+		<p>Valor 1:</p><input type="text" id="input1" /><br>
+		<p>Valor 2:</P><input type="text" id="input2" /><br><br>
+		<table>
+			<th>
+			<button onclick="return soma()">Somar</button>
+			<button onclick="return multiplica()">Multiplicar</button>
+			<button onclick="return dividi()">Dividir</button>
+			<button onclick="return subtrai()">Subtrair</button>
+			</th>
+		</table>
+		<div class="div_resul" id="exibi"></div>
+	</div>
+</body>
+</html>

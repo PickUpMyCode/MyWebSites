@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Baskara</title>
+		<meta charset="utf-8" />
+		<meta name="portview" content="width=width-device, initial-scale=1.0" />
+		<style type="text/css">
+			.visual{
+				height: 350px;
+				width: 300px;
+				background-color: white;
+				text-align: center;
+				display:inherit;
+				margin: 0px auto;
+				border: solid 4px;
+				border-radius: 10px;
+				text-shadow: #b1b1b1 1px 1px;
+			}
+		</style>
+		<script type="text/javascript">
+			//Classe para fazer todo calculo em Bhaskara utilizando JavaScript
+			class Baskara {
+				//Atributos
+				construtor(){
+					this.a;
+					this.b;
+					this.c;
+					this.Delta;
+					this.x1;
+					this.x2;
+				}
+				CalculoX1(){	
+					//Calculo do X1
+					this.Delta = Math.pow(this.b, 2) -4*this.a*this.c;
+					this.x1 = (-this.b - Math.sqrt(this.Delta))/(2*this.a);
+					if(this.Delta<0){
+						return "Não há solução no conjunto Real, pois não existe raiz quadrada real de número negativo.";
+					} else {
+						return "X1: "+this.x1;
+					}
+				}
+				CalculoX2(){
+					//Calculo X2
+					this.Delta = (Math.pow(this.b, 2)) -4*this.a*this.c;
+					this.x2 = (-this.b + Math.sqrt(this.Delta))/(2*this.a);
+					if(this.Delta<0){
+						return "";
+					} else {
+						return "X2: "+this.x2;
+					}
+				}
+			}
+			function Resultado(){
+				//Imprime o Resultado Das Duas Raizes na Tela atraves Do evento Javascript "onClick"
+				var B1 = new Baskara();
+				var a1 = parseFloat(document.getElementById('a').value, 10);
+				var b2 = parseFloat(document.getElementById('b').value, 10);
+				var c3 = parseFloat(document.getElementById('c').value, 10);
+				B1.a = a1;
+				B1.b = b2;
+				B1.c = c3;
+				document.getElementById('resul').innerHTML = B1.CalculoX1()+"<br>"+B1.CalculoX2();
+			}
+		</script>
+	</head>
+	<body style="background-color:#678999">
+		<div class="visual">
+			<h1>Bhaskara</h1>
+			a: <input type="text" id="a" /><br><br>
+			b: <input type="text" id="b" /><br><br>
+			c: <input type="text" id="c" /><br><br>
+			<button onclick="return Resultado()">Resultado</button>
+			<h3>Resultado Das Raizes</h3>
+			<div id="resul"></div>
+			<div id="hora"></div>
+		</div>
+		<script type="text/javascript">
+			document.write("<hr/>"+"<h4>Informações</h4>"+Date());
+		</script>
+	</body>
+</html>

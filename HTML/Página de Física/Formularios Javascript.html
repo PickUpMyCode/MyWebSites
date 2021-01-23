@@ -1,0 +1,202 @@
+<html>
+	<head>
+		<title>Formulários Javascript</title>
+		<meta charset="utf-8" />
+		<style type="text/css">
+			*{
+				margin: 0px;
+			}
+			body{
+				background-color: #555555;
+			}
+			h1{
+				text-align: center;
+				color: white;
+				font-family: arial;
+				
+			}
+			.table_1{
+				margin-left: 720px;
+				margin-top: 60px;
+				background-color: black;
+				border: double orange;
+				border-radius: 10px;
+				position: absolute;
+			}
+			.top_div{
+				width: 99,9%;
+				height: 104px;
+				background-color: #000000;
+				border: double orange;
+				border-bottom: none;
+				
+			}
+			td{
+				color: white;
+				font-family: arial
+				font-size: 20px;
+			}
+			.div_mid{
+				width: 99,9%;
+				height: 830px;
+				border: double orange;
+			}
+			h4{
+				color: white;
+				text-align: center;
+			}
+			.left_div{
+				width: 14.3%;
+				height: 300px;
+				background-color: #000000;
+				margin-top: 60px;
+				margin-left: 5px;
+				position: relative;
+				border: double orange;
+				border-radius: 10px;
+				
+			}
+			h3{
+				color: white;
+				font-size: 25px;
+				margin-left: 50px;
+			}
+			p{
+				margin-left: 0px;
+			}
+			a{
+				color: white;
+				text-decoration: none;
+				font-family: arial;
+				text-align: center;
+				margin-left: 20px;
+				
+			}
+			a:hover{
+				color: blue;
+				font-weight: bold;
+			}
+		</style>
+		<script type="text/javascript">
+			function definir(){
+				var n1 = document.getElementById('nome');
+				if(n1.value == "" | n1.value.length < 4){
+					alert("Nome, sobrenome ou senha estão inválidos");
+					return false;
+				}
+				switch(n1.value){
+
+					case "Celso":
+					break;
+				
+					case "Raquel":
+					break;
+				
+					case "Matheus":
+					break;
+
+					default:
+					alert("Nome, sobrenome ou senha estão inválidos");
+					return false;
+					break;
+
+				}
+				var sbr1 = document.getElementById('sobrenome');				
+				if(sbr1.value == "" | sbr1.value.length < 4){
+					alert("Nome, sobrenome ou senha estão inválidos");
+					return false;
+				}
+				switch(sbr1.value){
+
+					case "Viana":
+					break;
+				
+					case "Alves":
+					break;
+				
+
+					case "Viana":
+					break;
+
+					default:
+					alert("Nome, sobrenome ou senha estão inválidos")
+					return false;
+					break;
+				}
+				var s1 = document.getElementById('senha');
+				if(s1.value == "" | s1.value.length < 4){
+					alert("Nome, sobrenome ou senhas estão inválidos.");
+					return false;
+				}
+				if(n1.value == "Matheus"){
+					if(sbr1.value =="Viana"){
+						if(s1.value == "1234"){
+							alert("Ola matheus!");
+							return true;
+						} 
+					}
+				}s
+				if(n1.value == "Raquel"){
+					if(sbr1.value =="Viana"){
+						if(s1.value == "6666"){
+							alert("Ola Raquel!");
+							return true;
+						} else {
+							return false;
+						}
+					}else {
+						return false;
+					}
+				} else {
+					return false;
+				}
+
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<div class="top_div">
+			<h1 id="h1">Formulários Javascript</h1>
+			<h4 id="h4">Está página foi feita para você se logar.</h4>
+		</div>
+		<div class="div_mid">
+		<table class="table_1"border="0">
+			<tr>
+				<form action="logged.html" onsubmit="return definir()">
+					<td>
+					<h2>Faça  o seu Login</h2><br>
+					Nome: <input type="text" id="nome" /><br><br>
+					Sobrenome: <input type="text" id="sobrenome" /><br><br>
+					senha: <input type="password" id="senha" /><br><br>
+					<input type="submit" value="Enviar"/>
+					
+					</td>
+				</form>
+			</tr>
+			<tr>
+				
+			</tr>
+		</table>
+		<div class="left_div">
+			<table  class="table_2" border="0">
+				<h3>Links - Veja já</h3>
+				<td>
+					<p>--------------------------------------------------</p>
+					<a href="innerHTML.html">Texto Alterado</a>
+				</td>
+				<table>
+					<td>
+						<p>--------------------------------------------------</p>
+						<a	href="Escre.html">Página Interativa</a>
+						<p>--------------------------------------------------</p>
+					</td>
+				</table>
+			</table>	
+		</div>
+		</div>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Escreva seu nome</title>
+			<meta charset="utf-8" />
+			<script type="text/javascript">
+			//Esta página tem apenas a função de colocar o seu nome
+				function numero() {
+					for(numero=0; numero<101; numero++){
+						document.write(numero + " ");
+
+
+					}
+					}
+
+				function subme() {
+					if(document.formulario.colorir.value == "Vermelho" | document.formulario.colorir.value == "vermelho"){
+						alert("Esta cor representa as rosas.");
+					} else if(document.formulario.colorir.value == "Amarelo" | document.formulario.colorir.value == "amarelo"){
+						alert("Esta é uma cor bonita.");
+					} else if(document.formulario.colorir.value == "ALaranjado" | document.formulario.colorir.value == "alaranjado"){
+						alert("Esta cor representa a fruta Laranja") 
+					} else if(document.formulario.colorir.value == "Azul" | document.formulario.colorir.value == "azul"){
+						alert("Esta cor representa o mar");
+					} else if(document.formulario.colorir.value == "Rosa" | document.formulario.colorir.value == "rosa"){
+						alert("Esta cor é feia");
+					} else if(document.formulario.colorir.value == "Verde" | document.formulario.colorir.value == "verde"){
+						alert("Esta cor é maravilhosa")
+					} else {
+						alert("Escreva o nome de alguma cor que seja válido");
+					}					
+					
+				}	
+
+			</script>
+				<style>
+			body{ 
+				background-color: #56ff90;
+				display: inherit;
+				text-align: center;
+				font-family: arial;
+				text-overflow: 
+			 }
+			img{
+				border: dashed black;
+				background-color: #56ff90;
+			}
+			table{
+				border: dashed black;
+				margin-left: 450px;
+			}
+			th{
+				text-align: center;
+				
+			}
+			.border_1{
+				border: dashed black;
+				margin-left: 350px;
+
+			}
+			.lin{
+				color: black;
+				text-decoration: none;
+				font-family: arial;
+			}
+			.lin:hover{
+				color: blue;
+				font-style: italic;
+				text-decoration: underline;
+			}
+		</style>
+		</head>
+		<body>
+			<script type="text/javascript">
+				function Funcao() {
+					var nom = document.form.nom;
+					var n1meros = ;
+					if(nom.value.length < 4 | nom.value == ) {
+						alert("Seu nome e sobrenome devem ter pelo menos 4 caracteres");
+						return false;
+					}
+					if(document.form.sub.value.length < 4) {
+						alert("Seu nome e sobrenome devem ter pelo menos 4 caracteres");
+						return false;
+					}
+					//Este script foi criado em homenagem ao nosso senhor presidente Marcos Rogério
+					if(nom.value == "Marcos" | nom.value == "Rogério") {
+					alert("Ola Presidente")
+					}				
+
+
+				}
+			</script>
+			<table  class="border_1" border="0">
+			<th>
+			<h1>Escreva Seu Nome</h1>
+			<p>Esta página serve como uma interação de modos diferentes com o usuário.</p>
+			<form name="form" action="http://www.youtube.com" onsubmit="return Funcao()"  >
+				Nome: <input type="text" name="nom" /><br /><br />
+				Sobrenome: <input type="text" name="sub" />
+				<input type="submit" value="Submeter" />	
+			</form><br /><br />
+			<p id="p1">Nome e sobrenome devem conter pelo menos 4 caracteres.</p>
+			</th>
+			</table>
+			<h2>Passe o mouse por cima desta luz, e veja o que acontece</h2>
+			<a class="imagem" onclick="return funcao2()" href="form.html" >
+			<img src="Loff.jpg" onmouseover="this.src='Lon.jpg'" onmouseout="this.src='Loff.jpg'" />
+			</a>
+			<a class="lin" href="" onclick="return numero()">
+			<h2>Clique aqui para ver os numeros de 1 a 100</h2>
+			</a>
+			<table border="0">
+			<th>
+			<h2>Escreva o nome de Alguma cor</h2>
+			<form name="formulario" action="" onsubmit="return subme()">
+				Cor: <input name="colorir" type="text" /><br /><br />
+				<input type="submit" value="Submeter"/>
+			</form>
+			</th>
+			</table>	
+		</body>
+	</html>
